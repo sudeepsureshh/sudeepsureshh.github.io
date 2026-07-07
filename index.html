@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sudeep Suresh | Software Engineer</title>
+<meta name="description" content="Software Engineer with 3 years building scalable microservices and REST APIs. MSc Advanced Computer Science, University of Sheffield." />
+<meta name="keywords" content="software engineer, backend developer, java, spring boot, microservices, rest api, sheffield, uk" />
+
+<!-- ============================================================
+     REPLACE BEFORE PUBLISHING:
+     1. Every  https://github.com/your-username  -> your real GitHub
+     2. Each project's "Code" link -> that project's repo URL
+     3. Confirm the email / LinkedIn are correct
+     (Phone number is deliberately left OFF a public site for privacy.)
+============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#0B0F1A;
+    --panel:#121826;
+    --panel-2:#161d2e;
+    --line:rgba(255,255,255,0.07);
+    --grid:rgba(95,208,216,0.05);
+    --text:#E6EAF2;
+    --muted:#8A94A6;
+    --muted-2:#606a7e;
+    --accent:#5FD0D8;
+    --accent-dim:rgba(95,208,216,0.14);
+    --gold:#F4B860;
+    --radius:14px;
+    --maxw:980px;
+    --display:'Space Grotesk',sans-serif;
+    --body:'IBM Plex Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:
+      linear-gradient(var(--grid) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:44px 44px;
+    background-position:center top;
+  }
+
+  a{color:inherit;text-decoration:none}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* eyebrow / mono labels */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:inline-flex;
+    align-items:center;
+    gap:.55em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;
+    background:var(--accent);
+    opacity:.6;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,15,26,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{font-family:var(--mono);font-size:.9rem;color:var(--text);letter-spacing:.02em}
+  .brand .b-accent{color:var(--accent)}
+  .nav-links{display:flex;gap:26px}
+  .nav-links a{
+    font-family:var(--mono);font-size:.82rem;color:var(--muted);
+    transition:color .2s;position:relative;padding:2px 0;
+  }
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--text)}
+  .nav-toggle{display:none;background:none;border:1px solid var(--line);
+    color:var(--text);border-radius:8px;padding:8px 10px;font-family:var(--mono);cursor:pointer}
+
+  @media(max-width:720px){
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;gap:0;
+      background:var(--panel);border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:340px}
+    .nav-links a{padding:14px 24px;border-top:1px solid var(--line)}
+    .nav-toggle{display:block}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:92px 0 70px}
+  .hero-grid{
+    display:grid;grid-template-columns:1.25fr .95fr;gap:40px;align-items:center;
+  }
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+
+  .hero h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(2.6rem,6vw,4rem);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin:20px 0 0;
+  }
+  .hero .hook{
+    font-size:clamp(1.05rem,2.2vw,1.3rem);
+    color:var(--text);
+    max-width:34ch;
+    margin:20px 0 8px;
+    font-weight:400;
+  }
+  .hero .hook b{color:var(--accent);font-weight:600}
+  .meta-row{
+    display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 30px;
+    font-family:var(--mono);font-size:.8rem;color:var(--muted);
+  }
+  .meta-row span{display:inline-flex;align-items:center;gap:.5em}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+  .dot.gold{background:var(--gold)}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    font-family:var(--mono);font-size:.82rem;
+    padding:11px 18px;border-radius:10px;
+    border:1px solid var(--line);color:var(--text);
+    display:inline-flex;align-items:center;gap:.5em;
+    transition:.2s;cursor:pointer;background:var(--panel);
+  }
+  .btn:hover,.btn:focus-visible{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+  .btn.primary{background:var(--accent);color:#08222a;border-color:var(--accent);font-weight:500}
+  .btn.primary:hover,.btn.primary:focus-visible{background:#7ee0e7;color:#08222a}
+
+  /* node signature */
+  .node-panel{
+    position:relative;
+    aspect-ratio:1/1;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:
+      radial-gradient(120% 120% at 70% 20%,rgba(95,208,216,.09),transparent 55%),
+      var(--panel);
+    overflow:hidden;
+  }
+  .node-panel .tag{
+    position:absolute;top:14px;left:16px;
+    font-family:var(--mono);font-size:.68rem;color:var(--muted-2);letter-spacing:.1em;
+  }
+  .node-svg{width:100%;height:100%;display:block}
+  .edge{stroke:var(--accent);stroke-width:1;opacity:.25}
+  .node-c{fill:var(--panel-2);stroke:var(--accent);stroke-width:1.4}
+  .node-hub{fill:var(--accent)}
+  .node-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--muted)}
+  .pulse{transform-box:fill-box;transform-origin:center;animation:pulse 3.2s ease-in-out infinite}
+  .pulse.d1{animation-delay:.4s}.pulse.d2{animation-delay:.9s}.pulse.d3{animation-delay:1.4s}
+  .pulse.d4{animation-delay:1.9s}.pulse.d5{animation-delay:2.4s}
+  @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+  @media(prefers-reduced-motion:reduce){.pulse{animation:none;opacity:.8}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:34px}
+  .sec-head h2{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(1.5rem,3.6vw,2.1rem);
+    letter-spacing:-.01em;margin-top:12px;
+  }
+  .sec-head p{color:var(--muted);max-width:60ch;margin-top:8px}
+
+  /* ---------- ABOUT ---------- */
+  .about-body{font-size:1.05rem;color:var(--text);max-width:66ch}
+  .about-body + .about-body{margin-top:16px}
+  .about-body b{color:var(--accent);font-weight:600}
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:640px){.skills-grid{grid-template-columns:1fr}}
+  .skill-card{
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:var(--radius);padding:20px 22px;
+  }
+  .skill-card h3{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px;font-weight:500;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    font-family:var(--mono);font-size:.78rem;
+    padding:5px 11px;border-radius:7px;
+    background:var(--panel-2);border:1px solid var(--line);color:var(--text);
+  }
+
+  /* ---------- TIMELINE (experience) ---------- */
+  .tl{position:relative}
+  .tl-item{
+    position:relative;padding:0 0 30px 30px;border-left:1px solid var(--line);
+  }
+  .tl-item:last-child{border-left-color:transparent;padding-bottom:0}
+  .tl-item::before{
+    content:"";position:absolute;left:-5px;top:5px;
+    width:9px;height:9px;border-radius:50%;
+    background:var(--bg);border:1.6px solid var(--accent);
+  }
+  .tl-item .role{font-family:var(--display);font-weight:600;font-size:1.12rem}
+  .tl-item .org{color:var(--accent);font-size:.95rem}
+  .tl-item .when{font-family:var(--mono);font-size:.76rem;color:var(--muted);margin:3px 0 12px}
+  .tl-item ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .tl-item li{position:relative;padding-left:18px;color:var(--muted);font-size:.95rem}
+  .tl-item li::before{content:"▸";position:absolute;left:0;color:var(--accent);opacity:.7}
+  .tl-item li b{color:var(--text);font-weight:600}
+
+  /* ---------- PROJECTS ---------- */
+  .proj-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  .proj{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;transition:border-color .2s,transform .2s;
+  }
+  .proj:hover{border-color:var(--accent-dim);transform:translateY(-2px)}
+  .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+  .proj h3{font-family:var(--display);font-weight:600;font-size:1.2rem}
+  .proj .when{font-family:var(--mono);font-size:.74rem;color:var(--muted);white-space:nowrap}
+  .proj .lead{color:var(--muted);margin:6px 0 14px;font-size:.9rem;font-style:italic}
+  .proj p{color:var(--text);font-size:.95rem;margin-bottom:14px}
+  .proj .stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+  .proj .stack .chip{font-size:.72rem;padding:4px 9px}
+  .proj-links{display:flex;gap:12px}
+  .proj-links a{
+    font-family:var(--mono);font-size:.78rem;color:var(--accent);
+    display:inline-flex;align-items:center;gap:.4em;border-bottom:1px solid transparent;padding-bottom:1px;
+  }
+  .proj-links a:hover{border-bottom-color:var(--accent)}
+
+  /* ---------- EDUCATION / TWO COL ---------- */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:720px){.two-col{grid-template-columns:1fr}}
+  .edu-card,.cert-card,.award-card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+  }
+  .edu-card h3{font-family:var(--display);font-weight:600;font-size:1.05rem}
+  .edu-card .org{color:var(--accent);font-size:.9rem;margin-top:2px}
+  .edu-card .when{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin:6px 0 12px}
+  .edu-card p{color:var(--muted);font-size:.9rem}
+  .edu-card p b{color:var(--text);font-weight:600}
+
+  /* ---------- CERTS & AWARDS ---------- */
+  .stack-list{display:flex;flex-direction:column;gap:12px}
+  .cert-card{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px}
+  .cert-card .c-name{font-size:.95rem}
+  .cert-card .c-issuer{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin-top:2px}
+  .cert-card .c-date{font-family:var(--mono);font-size:.74rem;color:var(--muted);white-space:nowrap}
+  .award-card{display:flex;gap:16px;align-items:flex-start}
+  .award-card .a-mark{
+    font-family:var(--mono);font-size:.7rem;color:var(--gold);border:1px solid rgba(244,184,96,.4);
+    border-radius:6px;padding:5px 8px;white-space:nowrap;margin-top:2px;
+  }
+  .award-card h3{font-family:var(--display);font-weight:600;font-size:1.02rem}
+  .award-card p{color:var(--muted);font-size:.9rem;margin-top:4px}
+
+  /* ---------- CONTACT ---------- */
+  .contact{text-align:center;padding-bottom:80px}
+  .contact h2{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.01em}
+  .contact p{color:var(--muted);max-width:46ch;margin:14px auto 28px}
+  .contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+  .status{
+    margin-top:40px;font-family:var(--mono);font-size:.8rem;color:var(--muted);
+    display:inline-flex;align-items:center;gap:.6em;
+    border:1px solid var(--line);border-radius:999px;padding:9px 18px;background:var(--panel);
+  }
+  .status .live{width:8px;height:8px;border-radius:50%;background:#43d17a;box-shadow:0 0 0 0 rgba(67,209,122,.5);animation:live 2s infinite}
+  @keyframes live{0%{box-shadow:0 0 0 0 rgba(67,209,122,.5)}70%{box-shadow:0 0 0 7px rgba(67,209,122,0)}100%{box-shadow:0 0 0 0 rgba(67,209,122,0)}}
+  @media(prefers-reduced-motion:reduce){.status .live{animation:none}}
+
+  footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;
+    font-family:var(--mono);font-size:.74rem;color:var(--muted-2)}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">sudeep<span class="b-accent">.suresh</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">menu</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#education">education</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<a id="top"></a>
+<div class="hero wrap">
+  <div class="hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow">Software Engineer · Sheffield, UK</span>
+      <h1>Sudeep<br>Suresh</h1>
+      <p class="hook">I design and build <b>scalable backend systems</b> — microservices, REST APIs and the infrastructure that keeps them reliable.</p>
+      <div class="meta-row">
+        <span><i class="dot"></i>3 years commercial experience</span>
+        <span><i class="dot"></i>Java · Spring Boot · Microservices</span>
+        <span><i class="dot gold"></i>MSc, University of Sheffield</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="#projects">View work</a>
+        <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/sudeeps16/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="mailto:sudeepsureshh@gmail.com">Email</a>
+      </div>
+    </div>
+
+    <!-- SIGNATURE: microservices node graph -->
+    <div class="node-panel reveal in" aria-hidden="true">
+      <span class="tag">// service topology</span>
+      <svg class="node-svg" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- edges from central hub -->
+        <line class="edge" x1="150" y1="150" x2="70"  y2="70"/>
+        <line class="edge" x1="150" y1="150" x2="235" y2="60"/>
+        <line class="edge" x1="150" y1="150" x2="250" y2="165"/>
+        <line class="edge" x1="150" y1="150" x2="200" y2="245"/>
+        <line class="edge" x1="150" y1="150" x2="80"  y2="235"/>
+        <line class="edge" x1="150" y1="150" x2="55"  y2="160"/>
+        <!-- outer nodes -->
+        <g class="pulse d1"><circle class="node-c" cx="70"  cy="70"  r="10"/></g>
+        <g class="pulse d2"><circle class="node-c" cx="235" cy="60"  r="10"/></g>
+        <g class="pulse d3"><circle class="node-c" cx="250" cy="165" r="10"/></g>
+        <g class="pulse d4"><circle class="node-c" cx="200" cy="245" r="10"/></g>
+        <g class="pulse d5"><circle class="node-c" cx="80"  cy="235" r="10"/></g>
+        <g class="pulse d2"><circle class="node-c" cx="55"  cy="160" r="10"/></g>
+        <!-- central hub -->
+        <circle class="node-hub" cx="150" cy="150" r="15"/>
+        <circle cx="150" cy="150" r="24" stroke="#5FD0D8" stroke-opacity="0.35" fill="none"/>
+        <text class="node-lbl" x="150" y="185" text-anchor="middle">config service</text>
+        <text class="node-lbl" x="150" y="197" text-anchor="middle" fill="#5FD0D8">30+ dependents</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">01 / About</span>
+      <h2>Backend by focus, full-stack by range.</h2>
+    </div>
+    <div class="reveal">
+      <p class="about-body">I'm a software engineer with <b>3 years of commercial experience</b> building scalable microservices and REST APIs for hybrid banking systems. My work has centred on making systems faster and more reliable — from a reactive refactor that improved API response times by <b>67%</b>, to re-architecting a central configuration service relied on by <b>30+ internal projects</b>.</p>
+      <p class="about-body">I'm currently completing an <b>MSc in Advanced Computer Science</b> at the University of Sheffield (Predicted Distinction), where I've been broadening into machine learning and mobile development — including a computer-vision dissertation on person re-identification across video scenes.</p>
+      <p class="about-body">I care about clean architecture, automated delivery, and writing code other engineers can build on. I'm open to backend, full-stack and systems roles in the UK.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">02 / Skills</span>
+      <h2>The stack I build with.</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3>Languages</h3>
+        <div class="chips">
+          <span class="chip">Java</span><span class="chip">Python</span><span class="chip">C#</span>
+          <span class="chip">JavaScript</span><span class="chip">Kotlin</span><span class="chip">C++</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Frameworks</h3>
+        <div class="chips">
+          <span class="chip">Spring Boot</span><span class="chip">Spring MVC</span><span class="chip">React</span>
+          <span class="chip">Angular</span><span class="chip">Jetpack Compose</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Data & Infra</h3>
+        <div class="chips">
+          <span class="chip">PostgreSQL</span><span class="chip">Oracle</span><span class="chip">MongoDB</span>
+          <span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">AWS</span><span class="chip">Azure</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Practices & Tools</h3>
+        <div class="chips">
+          <span class="chip">Microservices</span><span class="chip">CI/CD</span><span class="chip">Jenkins</span>
+          <span class="chip">TDD</span><span class="chip">JUnit</span><span class="chip">Git</span><span class="chip">Agile/Scrum</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">03 / Experience</span>
+      <h2>Where I've built things.</h2>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal">
+        <div class="role">Developer</div>
+        <div class="org">Centrico</div>
+        <div class="when">Aug 2022 – Aug 2025</div>
+        <ul>
+          <li><b>Rearchitected Configurator</b>, the company's central configuration service relied on by 30+ internal projects, from legacy Java to a reactive Java 21 stack (Mono/Flux), improving API response times by 67%.</li>
+          <li><b>Architected CI/CD pipelines</b> with Jenkins and Docker, cutting deployment times by 40% and standardising releases across distributed services.</li>
+          <li><b>Led the migration</b> from Oracle to MongoDB with optimised indexing, reducing query latency by 30%.</li>
+          <li>Built RESTful APIs for POS features with Spring Boot, increasing transaction throughput by 20%, and raised test coverage by 35% with JUnit and Mockito.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <div class="role">Java Programming Mentor</div>
+        <div class="org">Enactus Sheffield · Code Creators</div>
+        <div class="when">Dec 2025 – Mar 2026</div>
+        <ul>
+          <li>Delivered beginner Java workshops to learners from non-technical backgrounds, designing lesson materials and hands-on exercises, with session proceeds directed to charitable causes.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <div class="role">Data Analyst Intern</div>
+        <div class="org">TakenMind Technologies</div>
+        <div class="when">Jun 2021 – Sep 2021</div>
+        <ul>
+          <li>Analysed datasets with Python (Pandas, NumPy), improving data processing speed by 20%, and wrote complex SQL to power reporting dashboards.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">04 / Projects</span>
+      <h2>Selected work.</h2>
+      <p>A mix of team and individual builds. Repository links show my contributions — where a project was collaborative, the README notes what I personally owned.</p>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj reveal">
+        <div class="proj-top">
+          <h3>eWaste Hub</h3>
+          <span class="when">Mar 2026 – May 2026</span>
+        </div>
+        <div class="lead">Full-stack B2C waste-management platform · team of 7</div>
+        <p>Architected a JWT-secured Spring Boot 3.2 (Java 17) backend managing electronic waste from submission through classification, paid data retrieval and recycling. Designed the PostgreSQL schema (11 tables) and built the paid data-retrieval workflow with secure time-limited download links. Delivered to a first-class documentation standard.</p>
+        <div class="stack">
+          <span class="chip">Spring Boot 3.2</span><span class="chip">Java 17</span><span class="chip">PostgreSQL</span>
+          <span class="chip">React 18</span><span class="chip">Stripe</span><span class="chip">PayPal</span><span class="chip">Cloudinary</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/your-username/ewaste-hub" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-top">
+          <h3>RecoLA Utility Manager</h3>
+          <span class="when">Sep 2025 – Dec 2025</span>
+        </div>
+        <div class="lead">Full-stack Android property-management app</div>
+        <p>Built a multi-screen Android app managing 30+ properties across tenant and utility-bill workflows, using a declarative Jetpack Compose UI. Devised an offline-first architecture with a repository pattern and integrated device geolocation to sort properties by proximity — reliable access without a network dependency.</p>
+        <div class="stack">
+          <span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span><span class="chip">Android</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/your-username/recola" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-top">
+          <h3>Movie Ticket Booking Platform</h3>
+          <span class="when">Feb 2023 – Mar 2023</span>
+        </div>
+        <div class="lead">Full-stack booking system</div>
+        <p>Engineered a ticket-booking platform with Spring Boot, Spring MVC and Angular JWT authentication for secure access, and deployed it via Docker for simpler, more scalable releases.</p>
+        <div class="stack">
+          <span class="chip">Spring Boot</span><span class="chip">Spring MVC</span><span class="chip">Angular</span><span class="chip">Docker</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/your-username/ticket-booking" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">05 / Education</span>
+      <h2>Study.</h2>
+    </div>
+    <div class="two-col">
+      <div class="edu-card reveal">
+        <h3>MSc Advanced Computer Science</h3>
+        <div class="org">University of Sheffield</div>
+        <div class="when">Sep 2025 – Sep 2026 · Sheffield, UK</div>
+        <p><b>Predicted Distinction.</b> Focus on Machine Learning and Mobile Application Development. Dissertation on computer-vision person re-identification — tracking individuals across non-contiguous video shots using whole-body appearance embeddings, evaluated on Rank-1 and mAP metrics.</p>
+      </div>
+      <div class="edu-card reveal">
+        <h3>BEng Computer Science & Engineering</h3>
+        <div class="org">Loyola-ICAM College</div>
+        <div class="when">Jul 2018 – Jul 2022 · Chennai, India</div>
+        <p><b>First Class Honours · CGPA 8.0/10.</b> Computer Science Society Lead.</p>
+      </div>
+    </div>
+
+    <!-- CERTS + AWARDS -->
+    <div class="two-col" style="margin-top:18px">
+      <div class="reveal">
+        <div class="stack-list">
+          <div class="cert-card">
+            <div>
+              <div class="c-name">Azure Fundamentals (AZ-900)</div>
+              <div class="c-issuer">Microsoft</div>
+            </div>
+            <div class="c-date">Apr 2024</div>
+          </div>
+          <div class="cert-card">
+            <div>
+              <div class="c-name">Google Cloud: Core Infrastructure</div>
+              <div class="c-issuer">Google Cloud</div>
+            </div>
+            <div class="c-date">Apr 2021</div>
+          </div>
+          <div class="cert-card">
+            <div>
+              <div class="c-name">Google Cloud Architecture Path</div>
+              <div class="c-issuer">Google Cloud</div>
+            </div>
+            <div class="c-date">Apr 2021</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="stack-list">
+          <div class="award-card">
+            <span class="a-mark">AWARD</span>
+            <div>
+              <h3>Agile Award — Centrico</h3>
+              <p>For independently delivering the Configurator central configuration service from scratch.</p>
+            </div>
+          </div>
+          <div class="award-card">
+            <span class="a-mark">SCHOLARSHIP</span>
+            <div>
+              <h3>International Scholarship — University of Sheffield</h3>
+              <p>Merit-based scholarship for the MSc Advanced Computer Science programme.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow" style="justify-content:center">06 / Contact</span>
+      <h2>Let's build something.</h2>
+      <p>I'm open to backend, full-stack and systems engineering roles in the UK. The fastest way to reach me is email or LinkedIn.</p>
+      <div class="contact-links">
+        <a class="btn primary" href="mailto:sudeepsureshh@gmail.com">sudeepsureshh@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/sudeeps16/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+      <div style="margin-top:8px">
+        <span class="status"><i class="live"></i>Open to opportunities · Based in Sheffield, UK</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Sudeep Suresh · built from scratch</footer>
+
+<script>
+  // mobile nav
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  t.addEventListener('click',function(){
+    var open=l.classList.toggle('open');
+    t.setAttribute('aria-expanded',open);
+  });
+  l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded',false)})});
+
+  // scroll reveal
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

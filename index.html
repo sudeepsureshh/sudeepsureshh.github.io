@@ -199,6 +199,25 @@ section{position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:110px
   display:flex;align-items:center;justify-content:center;
   font-weight:800;font-size:14px;
 }
+/* .icon-sq img{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+} */
+/* .icon-sq img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:5px;
+  border-radius:8px;
+} */
+.icon-sq img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:8px;
+  display:block;
+}
 .icon-sq.white{background:#e9e9e9;color:#111}
 .icon-sq.green{background:transparent;border:1px solid var(--green-50);color:var(--green);font-size:16px}
 .edu-card h4,.hl-card h4{font-family:var(--sans);font-size:15px;font-weight:700;line-height:1.35}
@@ -441,7 +460,7 @@ body.modal-locked{overflow:hidden}
     <p class="hero-tagline">Building software that's fast, scalable, and built to last.</p>
     <div class="typed-role"><span id="typed"></span><span class="cursor"></span></div>
     <div class="hero-socials">
-      <a href="https://github.com/sudeep1608" target="_blank" rel="noopener" aria-label="GitHub">
+      <a href="https://github.com/sudeepsureshh" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.3 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
       </a>
       <a href="https://linkedin.com/in/sudeeps16" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -480,7 +499,9 @@ body.modal-locked{overflow:hidden}
     <div>
       <div class="col-label">Education</div>
       <div class="edu-card">
-        <div class="icon-sq white">UoS</div>
+        <div class="icon-sq white">
+            <img src="assets/Sheffieldlogo_1.jpg" alt="University of Sheffield">
+        </div>
         <div>
           <h4>MSc Advanced Computer Science</h4>
           <div class="inst">University of Sheffield</div>
@@ -488,7 +509,9 @@ body.modal-locked{overflow:hidden}
         </div>
       </div>
       <div class="edu-card">
-        <div class="icon-sq white">LIC</div>
+        <div class="icon-sq white">
+          <img src="assets/licetlogo.jpeg" alt="LICET">
+        </div>        
         <div>
           <h4>BEng Computer Science &amp; Engineering</h4>
           <div class="inst">Loyola ICAM College, Chennai</div>
@@ -510,13 +533,6 @@ body.modal-locked{overflow:hidden}
           <p>Merit-based award for the MSc programme at Sheffield</p>
         </div>
       </div>
-      <div class="hl-card">
-        <div class="icon-sq green">⚡</div>
-        <div>
-          <h4>67% Faster APIs</h4>
-          <p>Reactive Java 21 refactor of a service powering 30+ banking projects</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -530,7 +546,10 @@ body.modal-locked{overflow:hidden}
 
       <div class="xp-card" data-tools="Java 21|Spring Boot|Reactive (Mono/Flux)|Jenkins|Docker|MongoDB|Oracle|Shell Scripting">
         <div class="xp-top">
-          <div class="icon-sq white">C</div>
+           <div class="icon-sq ">
+    <img src="assets/centrico_india_logo.jpeg" alt="Centrico">
+</div>
+        
           <div>
             <div class="xp-role">Software Developer</div>
             <div class="xp-org">@ Centrico</div>
@@ -550,22 +569,22 @@ body.modal-locked{overflow:hidden}
         </ul>
       </div>
 
-      <div class="xp-card" data-tools="Python|Pandas|NumPy|SQL">
+<div class="xp-card" data-tools="Java|REST APIs|SQL|Agile">
         <div class="xp-top">
-          <div class="icon-sq white">TM</div>
-          <div>
-            <div class="xp-role">Data Analyst Intern</div>
+<div class="icon-sq "> <img src="assets/takenmindlogo.jpeg" alt="TakenMind Technologies"> </div>          <div>
+            <div class="xp-role">Software Engineer Intern</div>
             <div class="xp-org">@ TakenMind Technologies</div>
             <span class="xp-dates">Jun 2021 – Sep 2021</span>
           </div>
         </div>
-        <p class="xp-sum">Turned raw real-world datasets into decision-ready analytics using the Python data stack and SQL.</p>
+        <p class="xp-sum">Shipped features and fixes across Java applications, working in Agile sprints alongside a team of six developers.</p>
         <div class="xp-foot" onclick="toggleCard(this)">
           <span class="cat">cat README.md</span><span class="chev">›</span>
         </div>
         <ul class="xp-detail">
-          <li>Analysed real-world datasets with Pandas and NumPy, <span class="metric">improving data processing speed by 20%</span>.</li>
-          <li>Programmed complex SQL queries powering reporting dashboards that supported data-driven decisions.</li>
+          <li>Implemented <span class="metric">10+ feature enhancements and bug fixes</span> across Java-based applications, improving user experience and system reliability.</li>
+          <li>Developed and tested REST APIs and database queries, <span class="metric">reducing issue-resolution time by 20%</span> through systematic debugging and collaboration.</li>
+          <li>Delivered tasks across Agile sprints with a team of 6 developers, maintaining a <span class="metric">95%+ on-time completion rate</span>.</li>
         </ul>
       </div>
     </div>
@@ -575,8 +594,9 @@ body.modal-locked{overflow:hidden}
 
       <div class="xp-card" data-tools="Java|Curriculum Design|Live Workshops">
         <div class="xp-top">
-          <div class="icon-sq white">ES</div>
-          <div>
+<div class="icon-sq ">
+    <img src="assets/enactuslogo.png" alt="Enactus Sheffield">
+</div>          <div>
             <div class="xp-role">Java Programming Mentor</div>
             <div class="xp-org">@ Enactus Sheffield (Code Creators)</div>
             <span class="xp-dates">Dec 2025 – Mar 2026</span>
@@ -590,25 +610,6 @@ body.modal-locked{overflow:hidden}
           <li>Designed a hands-on curriculum taking complete beginners from zero to writing working Java programs.</li>
           <li>Ran live workshop sessions built on practical exercises — learn by building, not by slides.</li>
           <li>Session proceeds donated to charitable causes through the Enactus social enterprise model.</li>
-        </ul>
-      </div>
-
-      <div class="xp-card" data-tools="Python|Computer Vision|Deep Learning|Re-ID Embeddings">
-        <div class="xp-top">
-          <div class="icon-sq white">UoS</div>
-          <div>
-            <div class="xp-role">MSc Dissertation Research</div>
-            <div class="xp-org">@ University of Sheffield</div>
-            <span class="xp-dates">2026</span>
-          </div>
-        </div>
-        <p class="xp-sum">Researching multi-scene person re-identification in video — building a computer-vision system that tracks individuals across non-contiguous shots using learned appearance embeddings.</p>
-        <div class="xp-foot" onclick="toggleCard(this)">
-          <span class="cat">cat README.md</span><span class="chev">›</span>
-        </div>
-        <ul class="xp-detail">
-          <li>Re-identifies people across non-contiguous shots using whole-body appearance embeddings and soft-biometric cues.</li>
-          <li>Evaluated against standard <span class="metric">Rank-1</span> and <span class="metric">mAP</span> re-identification metrics.</li>
         </ul>
       </div>
     </div>
@@ -636,9 +637,9 @@ body.modal-locked{overflow:hidden}
         <span class="proj-flag">Full Stack</span>
       </div>
       <h3>eWaste Hub</h3>
-      <p>B2C platform managing electronic waste from submission through classification, paid data retrieval and recycling. JWT-secured Spring Boot 3.2 backend with real Stripe, PayPal, Brevo SMTP and Cloudinary integrations; PostgreSQL schema with 11 tables, native ENUMs and audit history. Led a 7-member team across three sprints.</p>
+      <p>B2C platform managing electronic waste from submission through classification, paid data retrieval and recycling. JWT-secured Spring Boot 3.2 backend with real Stripe, PayPal, Brevo SMTP and Cloudinary integrations; PostgreSQL schema with 11 tables, native ENUMs and audit history.</p>
       <div class="proj-tech"><span>Spring Boot 3.2</span><span>Java 17</span><span>PostgreSQL</span><span>React 18</span><span>Stripe</span><span>PayPal</span></div>
-      <a class="proj-src" href="https://github.com/YOUR-GITHUB" target="_blank" rel="noopener">
+      <a class="proj-src" href="https://github.com/sudeepsureshh/eWaste" target="_blank" rel="noopener">
         <span class="gh"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.3 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>View Source</span>
         <span>→</span>
       </a>
@@ -652,7 +653,7 @@ body.modal-locked{overflow:hidden}
       <h3>RecoLA Utility Manager</h3>
       <p>Multi-screen Android app managing 30+ properties across tenant and utility-bill workflows with a declarative Jetpack Compose UI. Offline-first architecture with a repository pattern, plus device geolocation to sort properties by proximity — reliable access with zero network dependency.</p>
       <div class="proj-tech"><span>Kotlin</span><span>Jetpack Compose</span><span>Repository Pattern</span><span>Geolocation</span></div>
-      <a class="proj-src" href="https://github.com/YOUR-GITHUB" target="_blank" rel="noopener">
+      <a class="proj-src" href="https://github.com/sudeepsureshh/recola-utility-manager" target="_blank" rel="noopener">
         <span class="gh"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.3 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>View Source</span>
         <span>→</span>
       </a>
@@ -681,10 +682,9 @@ body.modal-locked{overflow:hidden}
       <div class="cert-issuer">Microsoft</div>
       <span class="cert-date">Apr 2024</span>
       <div class="cert-tags"><span>Azure Services</span><span>Cloud Computing</span><span>Cloud Security</span></div>
-      <div class="cert-actions">
-        <a class="cert-btn verify" href="#" onclick="return false">Verify ↗</a>
-        <a class="cert-btn view" href="#" onclick="return false">View Cert ⧉</a>
-      </div>
+   <div class="cert-actions">
+  <a class="cert-btn verify" href="https://learn.microsoft.com/api/credentials/share/en-us/SSudeep-9545/D7DDFD343ECB3504?sharingId" target="_blank" rel="noopener">⊙ Verify ↗</a>
+</div>
     </div>
     <div class="cert-card">
       <div class="cert-badge gc">GC</div>
@@ -692,10 +692,9 @@ body.modal-locked{overflow:hidden}
       <div class="cert-issuer">Google Cloud</div>
       <span class="cert-date">Apr 2021</span>
       <div class="cert-tags"><span>GCP Core Services</span><span>IAM</span><span>Compute &amp; Storage</span></div>
-      <div class="cert-actions">
-        <a class="cert-btn verify" href="#" onclick="return false">Verify ↗</a>
-        <a class="cert-btn view" href="#" onclick="return false">View Cert ⧉</a>
-      </div>
+     <div class="cert-actions">
+  <a class="cert-btn verify" href="https://www.coursera.org/account/accomplishments/certificate/973YDE87RBY5" target="_blank" rel="noopener">⊙ Verify ↗</a>
+</div>
     </div>
     <div class="cert-card">
       <div class="cert-badge gc">GC</div>
@@ -703,10 +702,9 @@ body.modal-locked{overflow:hidden}
       <div class="cert-issuer">Google Cloud</div>
       <span class="cert-date">Apr 2021</span>
       <div class="cert-tags"><span>Foundation &amp; Core Services</span><span>Scaling &amp; Automation</span><span>Design &amp; Process</span></div>
-      <div class="cert-actions">
-        <a class="cert-btn verify" href="#" onclick="return false">Verify ↗</a>
-        <a class="cert-btn view" href="#" onclick="return false">View Cert ⧉</a>
-      </div>
+   <div class="cert-actions">
+  <a class="cert-btn verify" href="https://www.coursera.org/account/accomplishments/specialization/certificate/7KNFWQVZD5YJ" target="_blank" rel="noopener">⊙ Verify ↗</a>
+</div>
     </div>
   </div>
 </section>
@@ -724,14 +722,14 @@ body.modal-locked{overflow:hidden}
           <span><span class="lbl">Email</span><br><span class="val">sudeepsureshh@gmail.com</span></span>
           <span class="arrow">→</span>
         </a>
-        <a class="contact-item" href="https://linkedin.com/in/sudeep" target="_blank" rel="noopener">
+        <a class="contact-item" href="https://linkedin.com/in/sudeeps16" target="_blank" rel="noopener">
           <span class="ci-icon"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></span>
           <span><span class="lbl">LinkedIn</span><br><span class="val">linkedin.com/in/sudeep</span></span>
           <span class="arrow">→</span>
         </a>
-        <a class="contact-item" href="https://github.com/YOUR-GITHUB" target="_blank" rel="noopener">
+        <a class="contact-item" href="https://github.com/sudeepsureshh" target="_blank" rel="noopener">
           <span class="ci-icon"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.3 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></span>
-          <span><span class="lbl">GitHub</span><br><span class="val">github.com/YOUR-GITHUB</span></span>
+          <span><span class="lbl">GitHub</span><br><span class="val">github.com/sudeep</span></span>
           <span class="arrow">→</span>
         </a>
       </div>
@@ -756,14 +754,6 @@ body.modal-locked{overflow:hidden}
           <div class="out">67% faster than the legacy version ⚡</div>
           <br>
           <div><span class="p">$</span> <span class="cursor"></span></div>
-        </div>
-      </div>
-      <div class="also">
-        <div class="col-label">Also Find Me On</div>
-        <div class="also-grid">
-          <a class="also-card" href="https://leetcode.com/YOUR-HANDLE" target="_blank" rel="noopener"><span class="glyph">⌘</span>LeetCode</a>
-          <a class="also-card" href="https://stackoverflow.com/users/YOUR-ID" target="_blank" rel="noopener"><span class="glyph">⬡</span>Stack Overflow</a>
-          <a class="also-card" href="https://medium.com/@YOUR-HANDLE" target="_blank" rel="noopener"><span class="glyph">✍</span>Medium</a>
         </div>
       </div>
     </div>
@@ -816,7 +806,7 @@ const seq = [
   {cmd:"whoami --verbose", out:[
     '<span class="info">[*] Sudeep Suresh</span>',
     '<span class="info">[*] MSc Advanced Computer Science — University of Sheffield</span>',
-    '<span class="info">[*] Software Developer, 3 YOE — Banking Systems</span>',
+    '<span class="info">[*] Software Developer, 3+ YOE — Banking Systems</span>',
     '<span class="info">[*] Agile Award Winner @ Centrico</span>'
   ]},
   {cmd:"cat /etc/skills.conf", out:[
@@ -867,7 +857,7 @@ nextCmd();
 const modal = document.getElementById('xp-modal');
 function toggleCard(foot){
   const card = foot.closest('.xp-card');
-  document.getElementById('m-icon').textContent = card.querySelector('.icon-sq').textContent;
+  document.getElementById('m-icon').innerHTML = card.querySelector('.icon-sq').innerHTML;
   document.getElementById('m-title').textContent = card.querySelector('.xp-role').textContent;
   document.getElementById('m-org').textContent = card.querySelector('.xp-org').textContent;
   document.getElementById('m-dates').textContent = card.querySelector('.xp-dates').textContent;
